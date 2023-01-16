@@ -6,11 +6,15 @@
 // extern crate config;
 
 
-#[macro_use]
-extern crate tokio;
+// #[macro_use]
+// extern crate tokio;
+
+// #[macro_use]
+// extern crate tokio_cron_scheduler;
 
 #[macro_use]
-extern crate tokio_cron_scheduler;
+extern crate job_scheduler;
+
 
 pub mod db;
 pub mod service;

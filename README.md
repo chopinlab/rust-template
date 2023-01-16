@@ -29,6 +29,7 @@ cargo check    # 컴파일 상태 체크
   - api
   - db
   - service
+  - configs
   - lib.rs
   - main.rs
 - target
@@ -40,6 +41,25 @@ cargo check    # 컴파일 상태 체크
 - 설정 라이브러리
   - https://github.com/mehcode/config-rs
 
+
+- scheduler cron 라이브러리
+  - (사용 방법) https://medium.com/@knoldus/schedule-the-program-in-rust-a368f710a17f
+  - https://github.com/lholden/job_scheduler
+
+## 문법 정리
+```rust
+let x: Result<u32, &str> = Ok(2);
+println!("{}", x.unwrap());
+println!("{}", x.ok().unwrap());
+
+let x1: Result<u32, i32> = Err(2);
+println!("{}", x1.err().unwrap());
+
+let y: Option<i32> = Some(2);
+println!("{}", y.unwrap());
+
+
+```
 
 ## 1.TODO
 - 해야 할 것
@@ -53,6 +73,3 @@ cargo check    # 컴파일 상태 체크
   - logger
   - swagger
   - test code
-
-
-  - 

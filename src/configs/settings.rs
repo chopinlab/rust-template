@@ -4,43 +4,44 @@ use std::env;
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
-struct Database {
-    url: String,
-    password: String,
+pub struct Database {
+    pub url: String,
+    pub password: String,
 }
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
-struct Sparkpost {
-    key: String,
-    token: String,
-    url: String,
-    version: u8,
+pub struct Scheduler {
+    pub cron: String,
+    pub key: String,
+    pub token: String,
+    pub url: String,
+    pub version: u8,
 }
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
-struct Twitter {
+pub struct Twitter {
     consumer_token: String,
     consumer_secret: String,
 }
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
-struct Braintree {
-    merchant_id: String,
-    public_key: String,
-    private_key: String,
+pub struct Braintree {
+    pub merchant_id: String,
+    pub public_key: String,
+    pub private_key: String,
 }
 
 #[derive(Debug, Deserialize)]
 #[allow(unused)]
 pub struct Settings {
-    debug: bool,
-    database: Database,
-    sparkpost: Sparkpost,
-    twitter: Twitter,
-    braintree: Braintree,
+    pub debug: bool,
+    pub database: Database,
+    pub scheduler: Scheduler,
+    pub twitter: Twitter,
+    pub braintree: Braintree,
 }
 
 impl Settings {
@@ -57,7 +58,7 @@ impl Settings {
             .add_source(File::with_name(&format!("src/configs/config_{}", profile)).required(false), )
             // Add in a local configuration file
             // This file shouldn't be checked in to git
-            .add_source(config::File::with_name("src/configs/config_local").required(false))
+            // .add_source(File::with_name("src/configs/config_local").required(false))
             // Add in settings from the environment (with a prefix of APP)
             // Eg.. `APP_DEBUG=1 ./target/app` would set the `debug` key
             .add_source(Environment::with_prefix("app"))

@@ -2,10 +2,11 @@ debug = true
 
 [database]
 url = "postgres://postgres@dev"
-#password = ""
+password = ""
 echo = true
 
-[sparkpost]
+[scheduler]
+cron = "0 50 7 * * *"
 key = "sparkpost-dev-key"
 token = "sparkpost-dev-token"
 url = "https://api.sparkpost.com"

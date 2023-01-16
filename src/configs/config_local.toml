@@ -5,7 +5,8 @@ url = "postgres://postgres@localhost"
 password = ""
 echo = true
 
-[sparkpost]
+[scheduler]
+cron = "0 6 9 * * *"
 key = "sparkpost-dev-key"
 token = "sparkpost-dev-token"
 url = "https://api.sparkpost.com"

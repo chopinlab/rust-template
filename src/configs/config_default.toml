@@ -1,8 +1,9 @@
 [database]
 url = "postgres://postgres@localhost"
-#password = "test"
+password = ""
 
-[sparkpost]
+[scheduler]
+cron = "0 1 7 * * *"
 key = "sparkpost-dev-key"
 token = "sparkpost-dev-token"
 url = "https://api.sparkpost.com"
